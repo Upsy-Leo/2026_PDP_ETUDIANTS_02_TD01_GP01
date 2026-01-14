@@ -11,7 +11,7 @@ const char* mqtt_server = "27cc61dbaffc4da08cd0081cabd8cf01.s2.eu.hivemq.cloud";
 int mqtt_port = 8883;
 const char* mqtt_user = "create_ece";
 const char* mqtt_pass = "create123A";
-const char* client_id = "TD01_GP01  ";
+const char* client_id = "TD01_GP01";
 
 static const char ca_cert[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
@@ -112,7 +112,7 @@ void setup() {
   // ...
   if(mqtt_client.connect(client_id, mqtt_user, mqtt_pass)){
   Serial.println("Connected to MQTT broker");
-  mqtt_client.publish("TD01_GP01/temperature", String(temp_measure).c_str());
+  mqtt_client.publish("TD01_GP01/temp", String(temp_measure).c_str());
   mqtt_client.publish("TD01_GP01/relhum", String(relative_humidity_measure).c_str());
   Serial.println("Envoyé au broker");
   }
