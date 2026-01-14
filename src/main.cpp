@@ -111,7 +111,10 @@ void setup() {
   // Send data to the broker with MQTT
   // ...
   mqtt_client.connect(client_id, mqtt_user, mqtt_pass);
-  Serial.println("Connected to MQTT broker.");
+  Serial.println("Connected to MQTT broker");
+  mqtt_client.publish("TD01_GP01temperature", String(temp_measure).c_str());
+  mqtt_client.publish("TD01_GP01humidity", String(relative_humidity_measure).c_str());
+  Serial.println("Envoyé au broker");
 
   Serial.println("Going to sleep for 5 seconds...");
   delay(100);
