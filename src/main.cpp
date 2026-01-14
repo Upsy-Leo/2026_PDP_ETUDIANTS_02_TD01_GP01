@@ -54,6 +54,9 @@ emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
 
 DHT_Unified dht(SENSOR, DHTTYPE);
 
+WiFiClientSecure client;
+PubSubClient mqtt_client(client); 
+
 void setup() {
   // Begin serial communication
   Serial.begin(9600);
